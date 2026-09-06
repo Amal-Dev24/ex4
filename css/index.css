@@ -1,0 +1,133 @@
+body {
+    background: #0f2027;
+    background: -webkit-linear-gradient(to right, #2c5364, #203a43, #0f2027);
+    background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+}
+
+
+section .container .row .box .item {
+    width: 250px;
+    height: 250px;
+    position: relative;
+}
+
+section .container .row .box .item img {
+    transform: scale(1);
+    transition-duration: 0.5s;
+}
+
+section .container .row .box .item:hover img {
+    transform: scale(1.2);
+}
+
+
+section .container .row .box .item .layout {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition-duration: 0.5s;
+    opacity: 0;
+}
+
+section .container .row .box .item:hover .layout {
+    opacity: 1;
+}
+
+
+section .container .row .box .item .layout i {
+    transition-duration: 0.5s;
+    transform: rotate(0deg);
+    color: #fff;
+    font-size: 30px;
+}
+
+section .container .row .box .item .layout i:hover {
+    transform: rotate(180deg);
+    color: var(--bs-yellow);
+}
+
+section .container .popup {
+    left: 0;
+    height: 100vh;
+    display: flex;
+    display: none;
+    opacity: 0;
+    transition-duration: 1s;
+    background-color: rgba(44, 83, 100, 0.5);
+
+}
+
+section .container .popup.active {
+    display: flex;
+
+}
+
+section .container .popup.show {
+    opacity: 1;
+
+}
+
+section .container .popup .box {
+    width: 500px;
+    border-radius: 10px;
+
+}
+
+section .container .popup .box i,
+section .container .popup .box .list li {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #0f2027;
+    background: -webkit-linear-gradient(to right, #2c5364, #203a43, #0f2027);
+    background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: yellow;
+    cursor: pointer;
+
+}
+
+section .container .popup .box .close {
+    top: 3%;
+    right: 3%;
+    font-size: 12px;
+}
+
+section .container .popup .box .next {
+    top: 50%;
+    transform: translateY(-50%);
+    right: 3%;
+    font-size: 12px;
+}
+
+section .container .popup .box .prev {
+    top: 50%;
+    transform: translateY(-50%);
+    left: 3%;
+    font-size: 12px;
+}
+
+section .container .popup .box .list {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 3%;
+    font-size: 14px;
+
+}
+
+section .container .popup .box .list li {
+    flex-shrink: 0;
+}
+
+section .container .popup .box .list li.active {
+    background: #fff;
+}

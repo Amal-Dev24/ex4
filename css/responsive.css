@@ -1,0 +1,101 @@
+@media (max-width: 1300px) {
+    section .container .popup .box {
+        width: 280px;
+
+
+    }
+
+    /* section .container .popup .box .item {
+        padding: 5px;
+
+
+    }*/
+
+
+    section .container .popup .box i,
+    section .container .popup .box .list li {
+        width: 25px;
+        height: 25px;
+
+
+    }
+
+    section .container .popup .box .close {
+        top: 5%;
+        right: 5%;
+        font-size: 12px;
+    }
+
+    section .container .popup .box .next {
+        top: 50%;
+
+        right: 5%;
+        font-size: 12px;
+    }
+
+    section .container .popup .box .prev {
+        top: 50%;
+
+        left: 5%;
+        font-size: 12px;
+    }
+
+    section .container .popup .box .list {
+        left: 50%;
+        bottom: 3%;
+        width: 95%;
+        overflow: hidden;
+        font-size: 14px;
+
+    }
+
+    section .container .popup .box .list ul {
+        overflow-x: scroll;
+        padding: 10px 0px;
+    }
+}
+
+@media (min-width: 371px) and (max-width: 1300px) {}
+
+@media (min-width: 577px) and (max-width: 1300px) {
+    section .container .popup .box {
+        width: 350px;
+
+
+    }
+
+    section .container .popup .box .list {
+
+        width: 70%;
+
+
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1300px) {
+    section .container .popup .box {
+        width: 400px;
+
+
+    }
+
+    section .container .popup .box .list {
+        width: initial;
+        overflow: initial;
+    }
+
+    section .container .popup .box .list li {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1300px) {
+    section .container .popup .box {
+        width: 500px;
+
+
+    }
+}
+
+@media (min-width: 1181px) and (max-width: 1300px) {}
