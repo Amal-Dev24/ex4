@@ -30,7 +30,7 @@ popupbox.addEventListener("click", function (e) {
 popupexit.addEventListener("click", closepopup)
 
 popupnext.addEventListener("click", function () {
-    currentimgindex = ++currentimgindex % sectionimgs.length;
+    currentimgindex = ++currentimgindex % (sectionimgs.length - 1);
     let nextimgindex = currentimgindex,
         nextimg = sectionimgs[nextimgindex],
         nextimgsrc = nextimg.getAttribute("src");
@@ -40,7 +40,7 @@ popupnext.addEventListener("click", function () {
 })
 
 popupprev.addEventListener("click", function () {
-    currentimgindex = (--currentimgindex + sectionimgs.length) % sectionimgs.length;
+    currentimgindex = (--currentimgindex + (sectionimgs.length - 1)) % (sectionimgs.length - 1);
     let previmgindex = currentimgindex,
         prevtimg = sectionimgs[previmgindex],
         previmgsrc = prevtimg.getAttribute("src");
