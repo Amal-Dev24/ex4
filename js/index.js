@@ -6,7 +6,7 @@ let popupkeys = document.querySelectorAll("section .row .popupkey"),
     popupprev = popup.querySelector(".prev"),
     popupimg = popup.querySelector("img"),
     popuplist = popup.querySelectorAll("ul li"),
-    sectionimgs = document.querySelectorAll("section img"),
+    sectionimgs = document.querySelectorAll("section .row img"),
     currentimgindex;
 popupkeys.forEach(function (popupkey) {
     popupkey.addEventListener("click", function () {
@@ -30,7 +30,7 @@ popupbox.addEventListener("click", function (e) {
 popupexit.addEventListener("click", closepopup)
 
 popupnext.addEventListener("click", function () {
-    currentimgindex = ++currentimgindex % (sectionimgs.length - 1);
+    currentimgindex = ++currentimgindex % sectionimgs.length ;
     let nextimgindex = currentimgindex,
         nextimg = sectionimgs[nextimgindex],
         nextimgsrc = nextimg.getAttribute("src");
@@ -40,7 +40,7 @@ popupnext.addEventListener("click", function () {
 })
 
 popupprev.addEventListener("click", function () {
-    currentimgindex = (--currentimgindex + (sectionimgs.length - 1)) % (sectionimgs.length - 1);
+    currentimgindex = (--currentimgindex + sectionimgs.length) % sectionimgs.length;
     let previmgindex = currentimgindex,
         prevtimg = sectionimgs[previmgindex],
         previmgsrc = prevtimg.getAttribute("src");
