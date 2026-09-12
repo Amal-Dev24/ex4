@@ -1,63 +1,67 @@
 let popupkeys = document.querySelectorAll("section .row .popupkey"),
     popup = document.querySelector(".popup"),
-    popupbox = popup.querySelector(".box"),
-    popupexit = popup.querySelector(".close"),
-    popupnext = popup.querySelector(".next"),
-    popupprev = popup.querySelector(".prev"),
-    popupimg = popup.querySelector("img"),
-    popuplist = popup.querySelectorAll("ul li"),
-    sectionimgs = document.querySelectorAll("section .row img"),
-    currentimgindex;
+    popupBox = popup.querySelector(".box"),
+    popupExite = popup.querySelector(".close"),
+    popupNext = popup.querySelector(".next"),
+    popupPrev = popup.querySelector(".prev"),
+    popupImg = popup.querySelector("img"),
+    popupList = popup.querySelectorAll("ul li"),
+    sectionImgs = document.querySelectorAll("section .row img"),
+    currentImgIndex;
 popupkeys.forEach(function (popupkey) {
     popupkey.addEventListener("click", function () {
-        let currentimg = popupkey.parentElement.previousElementSibling,
-            currentimgsrc = currentimg.getAttribute(("src")),
-            sectionimgsarr = Array.from(sectionimgs);
-        currentimgindex = sectionimgsarr.indexOf(currentimg);
-
-        updateindicators();
-        updateimg(currentimgsrc);
-        openpopup();
+        let currentImg = popupkey.parentElement.previousElementSibling,
+            currentImgSrc = currentImg.getAttribute(("src")),
+            sectionImgsArr = Array.from(sectionImgs);
+        currentImgIndex = sectionImgsArr.indexOf(currentImg);
+        updateIndicators();
+        updateImg(currentImgSrc);
+        openPopup();
     })
 });
 
-popup.addEventListener("click", closepopup)
-
-popupbox.addEventListener("click", function (e) {
+popup.addEventListener("click", closePopup)
+popupBox.addEventListener("click", function (e) {
     e.stopPropagation();
 })
 
-popupexit.addEventListener("click", closepopup)
+popupExite.addEventListener("click", closePopup)
 
-popupnext.addEventListener("click", function () {
-    currentimgindex = ++currentimgindex % sectionimgs.length ;
-    let nextimgindex = currentimgindex,
-        nextimg = sectionimgs[nextimgindex],
-        nextimgsrc = nextimg.getAttribute("src");
+popupNext.addEventListener("click", function () {
+    currentImgIndex = ++currentImgIndex % sectionImgs.length;
 
-    updateindicators();
-    updateimg(nextimgsrc);
+    let nextImgIndex = currentImgIndex,
+        nextImg = sectionImgs[nextImgIndex],
+        nextImgsrc = nextImg.getAttribute("src");
+
+
+    updateIndicators();
+    updateImg(nextImgsrc);
 })
 
-popupprev.addEventListener("click", function () {
-    currentimgindex = (--currentimgindex + sectionimgs.length) % sectionimgs.length;
-    let previmgindex = currentimgindex,
-        prevtimg = sectionimgs[previmgindex],
-        previmgsrc = prevtimg.getAttribute("src");
-
-    updateindicators();
-    updateimg(previmgsrc);
+popupPrev.addEventListener("click", function () {
+    currentImgIndex = (--currentImgIndex + sectionImgs.length) % sectionImgs.length;
+    console.log(sectionImgs.length);
+    let prevImgIndex = currentImgIndex,
+        prevImg = sectionImgs[prevImgIndex],
+        prevImgSrc = prevImg.getAttribute("src");
+    updateIndicators();
+    updateImg(prevImgSrc);
 })
 
-popuplist.forEach(function (popupindicator, currentindicatorindex) {
-    popupindicator.addEventListener("click", function () {
-        let newimg = sectionimgs[currentindicatorindex],
-            newimgsrc = newimg.getAttribute("src");
-        currentimgindex = currentindicatorindex;
-        updateimg(newimgsrc);
-        updateindicators();
+popupList.forEach(function (popupIndicators, currentIndicatorsIndex) {
+    popupIndicators.addEventListener("click", function () {
+        let newImg = sectionImgs[currentIndicatorsIndex],
+            newImgSrc = newImg.getAttribute("src");
+        currentImgIndex = currentIndicatorsIndex;
+        updateImg(newImgSrc);
+        updateIndicators();
     })
 })
+
+
+
+
 
 
 
