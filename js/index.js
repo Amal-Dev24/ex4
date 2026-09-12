@@ -5,9 +5,23 @@ let popupkeys = document.querySelectorAll("section .row .popupkey"),
     popupNext = popup.querySelector(".next"),
     popupPrev = popup.querySelector(".prev"),
     popupImg = popup.querySelector("img"),
-    popupList = popup.querySelectorAll("ul li"),
+
+    popupIndicator = popup.querySelector("ul"),
     sectionImgs = document.querySelectorAll("section .row img"),
     currentImgIndex;
+
+
+for (let i = 0; i < sectionImgs.length; i++) {
+    let newIndicator = document.createElement("li");
+    newIndicator.textContent = i + 1;
+    if (i == 0) {
+        newIndicator.classList.add("active");
+    }
+    popupIndicator.append(newIndicator);
+}
+
+let popupList = popup.querySelectorAll("ul li");
+
 popupkeys.forEach(function (popupkey) {
     popupkey.addEventListener("click", function () {
         let currentImg = popupkey.parentElement.previousElementSibling,
